@@ -126,14 +126,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="suggestion_system.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="suggestion_system.hpp" />
-    <ClInclude Include="trie.hpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

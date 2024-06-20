@@ -41,7 +41,7 @@ void SuggestionSystem::insertHelper(std::string word, int& pointer, Node* node) 
 	}
 }
 
-std::vector<std::string> SuggestionSystem::getSuggestions(std::string prefix, bool sortedOutput) {
+std::vector<std::string> SuggestionSystem::getSuggestions(std::string prefix, bool sortedOutput, bool addPrefix) {
 	std::vector<std::string> suggestions;
 	std::string currentSubstring = "";
 	int pointer = 0;
@@ -53,7 +53,15 @@ std::vector<std::string> SuggestionSystem::getSuggestions(std::string prefix, bo
 	}
 
 	// start collecting characters from this point onwards
-	getSuggestionsHelper(suggestions, prefix, correctRoot);
+
+	if (addPrefix) {
+		getSuggestionsHelper(suggestions, prefix, correctRoot);
+	}
+	else {
+		getSuggestionsHelper(suggestions, "", correctRoot);
+	}
+
+	
 
 	if (sortedOutput) {
 		std::sort(suggestions.begin(), suggestions.end());

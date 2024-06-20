@@ -9,7 +9,7 @@ private:
 public:
 	SuggestionSystem();
 
-	std::vector<std::string> getSuggestions(std::string prefix, bool sortedOutput);
+	std::vector<std::string> getSuggestions(std::string prefix, bool sortedOutput, bool addPrefix);
 	void insertWordIntoTree(std::string word);
 	void insertMultipleWordsIntoTree(std::vector<std::string>& words);
 	void getSuggestionsHelper(std::vector<std::string>& suggestions, std::string currentSubstring, Node* root);

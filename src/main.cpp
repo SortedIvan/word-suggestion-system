@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include "suggestion_system.hpp"
 
 int main() {
@@ -8,12 +9,7 @@ int main() {
 
 	suggestionSystem->insertMultipleWordsIntoTree(functions);
 
-	std::string prefix = "d";
-	std::vector<std::string> suggestions = suggestionSystem->getSuggestions(prefix, true);
-
-	for (int i = 0; i < suggestions.size(); i++) {
-		std::cout << suggestions[i] << std::endl;
-	}
+	std::string currentWord = "";
 
 	delete suggestionSystem;
 }
